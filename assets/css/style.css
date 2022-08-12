@@ -1,0 +1,36 @@
+@charset "UTF-8";
+html {
+	font-family: 'Jost', sans-serif;
+	font-size: 10px;
+}
+body{
+	font-size: 1.4rem;
+	color: #333;
+}
+
+.container{
+	max-width: 120rem;
+	padding: 0 1.5rem;
+	margin: 0 auto;
+}
+.container--md{
+	max-width: 96rem;
+}
+.container--sm{
+	max-width: 75rem;
+}
+.container--xs{
+	max-width: 64rem;
+}
+
+header {
+	box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.26);
+	padding: 1rem;
+	background-color: #4fc08d;
+	color: white;
+	text-align: center;
+}
+header h1{
+	font-size: 3rem;
+	font-weight: bold;
+}
