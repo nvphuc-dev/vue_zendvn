@@ -1,2 +1,4 @@
 https://www.youtube.com/watch?v=6mlnBNKYpfI&list=PL7_CawtGdTaTAaOC7J8vECH6_IDU_4Sp2&index=6&ab_channel=ZendVN-H%E1%BB%8DcL%E1%BA%ADpTr%C3%ACnhOnline
 
+Lập trình VueJs - 12 Render Template dùng biểu thức điều kiện
+Lập trình VueJs - 15 Lưu ý quan trọng về Array và Object trong VueJs

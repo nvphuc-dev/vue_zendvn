@@ -16,11 +16,189 @@
 			<h1>Vue JS from ZendVN</h1>
 		</div>
 	</header>
-	<section id="app">
+
+	<section class="section">
 		<div class="container">
-			
+			<h2 class="hdg-lv2">Tìm hiểu về Vue Instance</h2>
+			<div id="appFirst">
+				<!-- Vue template syntax -->
+				<h2>{{ title }}</h2>
+				<p>{{ say('World') }}</p>
+			</div>
 		</div>
 	</section>
+
+	<section class="section section--gray">
+		<div class="container">
+			<h2 class="hdg-lv2">Ràng buộc dữ liệu một chiều với Data Binding (v-bind:)</h2>
+			<p class="c-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<div id="app">
+				<p class="cart-num">Giỏ Hàng (1)</p>
+				<div class="box-info">
+					<div class="box-info__img">
+						<img src="assets/img/common/product.jpg" alt="fluid-image">
+					</div>
+					<div class="box-info__des">
+						<h1 class="box-info__title"><a v-bind:href="url" v-bind:target="target">{{ title }}</a></h1>
+						<p class="box-info__brand">Brand: No Brand</p>
+						<p class="box-info__price">{{ formatPrice() }}</p>
+						<p class="box-info__discount">20,000đ <span>-50%</span></p>
+						<div class="box-info__colors">
+							<p class="box-info__label">Màu sắc</p>
+							<div class="box-info__color">
+								<p>Màu xanh</p>
+								<ul>
+									<li><img src="assets/img/common/den.jpg" alt="fluid-image"></li>
+									<li><img src="assets/img/common/xanh.jpg" alt="fluid-image"></li>
+									<li><img src="assets/img/common/trang.jpg" alt="fluid-image"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="details">
+					<h2>Chất liệu bền chặt</h2>
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h2 class="hdg-lv2">Sử dụng v on xử lí sự kiện người dùng (v-on:)</h2>
+			<div id="appCounter">
+				<p>Counter: <span>{{ counter }}</span></p>
+				<button v-on:click="handleClick($event, 5)" class="btn btn-primary">Click Me!</button>
+				<div class="item" v-on:mousemove="handleMouseMove">
+					<p>ClientX: {{ clientX }}</p>
+					<p>ClientY: {{ clientY }}</p>
+					<div class="item2" v-on:mousemove.stop="handleMouseMoveChild"></div>
+				</div>
+				<form action="" v-on:submit.prevent="formSubmit">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" name="name" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="name">Email</label>
+						<input type="email" name="email" class="form-control">
+					</div>
+					<button class="btn mt0">Đăng Nhập</button>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="section section--gray">
+		<div class="container">
+			<h2 class="hdg-lv2">Tìm hiểu về Computed</h2>
+			<div id="computed">
+				<p>Original message: "{{ message }}"</p>
+				<p>Computed reversed message: "{{ reversedMessage }}"</p>
+				<button class="btn" v-on:click="a++">A = A + 1</button>
+				<button class="btn" v-on:click="b++">B = B + 1</button>
+				<p>Number + A = {{ addA }}</p>
+				<p>Number + B = {{ addB }}</p>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h2 class="hdg-lv2">Ràng buộc dữ liệu 2 chiều (v-model)</h2>
+			<div id="twoWayBinding">
+				<p class="txt-lagre">Input value: {{ name }}</p>
+				<div class="form-group">
+					<input type="text" name="name" class="form-control" placeholder="Enter any..." v-model="name">
+				</div>
+
+				<div class="txt-lagre">Details: {{ details }}</p>
+				<div class="form-group">
+					<textarea name="" id="" cols="30" rows="10" v-model="details"></textarea>
+				</div>
+				<div class="item-demo" v-bind:class="ojbClass"></div>
+				<button class="btn" v-on:click="changeActive">Change Active</button>
+				<button class="btn" v-on:click="changeError">Change Error</button>
+				<hr>
+				<div v-bind:style="ojbStyle">
+					<p v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">Binding Inline Styles</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section section--gray">
+		<div class="container">
+			<h2 class="hdg-lv2">Render Template dùng biểu thức điều kiện</h2>
+			<div id="renderTempalte">
+				<ul class="tabs">
+					<li v-on:click="changeTabs('login')"><button class="btn btn-primary">Đăng nhập</button></li>
+					<li v-on:click="changeTabs('register')"><button class="btn btn-danger">Đăng ký</button></li>
+				</ul>
+				<div class="login" v-if="tabSelected === 'login'">
+					<form action="">
+						<div class="form-group">
+							<label for="name">User Name</label>
+							<input type="text" name="email" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" name="password" class="form-control">
+						</div>
+					</form>
+				</div>
+				<div class="register" v-else="tabSelected === 'register'">
+					<form action="">
+						<div class="form-group">
+							<label for="name">User Name</label>
+							<input type="text" name="email" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" name="password" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="retypepassword">Retype Password</label>
+							<input type="password" name="retypepassword" class="form-control">
+						</div>
+					</form>
+				</div>
+			</div>
+			<hr>
+			<h2 class="hdg-lv2">Render Template dùng vòng lặp trong VueJs (List Rendering)</h2>
+			<div id="renderList">
+				<ul>
+					<li v-for="(value, key) in scores">{{ key }}: {{ value }}</li>
+				</ul>
+				<hr>
+				<ul>
+					<li v-for="(user, index) in listUsers" :key="index">User: {{ user.name }} | Age: {{ user.age }}</li>
+				</ul>
+				<hr>
+				<p>User active</p>
+				<p v-for="user in userActive">{{ user.email }}</p>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h2 class="hdg-lv2">Lưu ý quan trọng về Array và Object</h2>
+			<div id="arrayObject">
+				<ul>
+					<li v-for="number in arrayNumber">{{ number }}</li>
+				</ul>
+				<hr>
+				<ul>
+					<li v-for="(score, key) in scores">{{ key }}: {{ score }}</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<p class="copy">Kenvin Nguyen</p>
+				<a href="https://github.com/nvphuc-dev/vue_zendvn" class="link" target="_blank">https://github.com/nvphuc-dev/vue_zendvn</a>
+			</div>
+		</div>
+	</footer>
 	<script src="assets/js/vue.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
