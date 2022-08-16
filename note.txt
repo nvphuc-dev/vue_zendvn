@@ -1,3 +1,33 @@
 1. Cài đặt VueJS
 2. Vue Instance
 3. Data & Method
+
+
+Cài đặt Vue CLI vào dự án thực tế từ hướng dẫn: https://github.com/vuejs-templates/webpack
+1. Các bước thực hiện (Usage):
+npm install -g vue-cli
+vue init webpack my-project
+cd my-project
+npm install
+npm run dev
+
+# Để cho người dùng sử dụng thì cần có 2 môi trường:
+1. Development (Coder, test)
+	- Babel: là trình biên dịch javascript
+		-> Tìm hiểu ES6 (là phiên bản mới...)
+		-> Mục đích là giúp chuyển đổi cú pháp mới có thể hoạt động tốt trên các trình duyệt cũ.
+	- webpack: là công cụ giúp đóng gói code, đóng gói mã nguồn.
+		-> Cấu hình lại mã nguồn đã được đóng gói nằm trong "webpack.config.js"
+
+2. Production (public cho người dùng sử dụng)
+
+# Ví dụ tạo các component cơ bản của Vue như sau:
+app
+	Header
+	ListProduct
+		ProductItem
+		ProductItem
+		ProductItem
+		ProductItem
+		ProductItem
+	Footer
