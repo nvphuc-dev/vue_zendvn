@@ -2,3 +2,12 @@ https://www.youtube.com/watch?v=6mlnBNKYpfI&list=PL7_CawtGdTaTAaOC7J8vECH6_IDU_4
 
 Lập trình VueJs - 12 Render Template dùng biểu thức điều kiện
 Lập trình VueJs - 15 Lưu ý quan trọng về Array và Object trong VueJs
+
+Cài đặt Vue CLI vào dự án thực tế từ hướng dẫn: https://github.com/vuejs-templates/webpack
+1. Các bước thực hiện (Usage):
+npm install -g vue-cli
+vue init webpack my-project
+cd my-project
+npm install
+npm run dev
+

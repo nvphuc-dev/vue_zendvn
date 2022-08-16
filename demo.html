@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue JS - ZendVN</title>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="shortcut icon" href="assets/img/common/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<header>
+		<div class="container container--sm">
+			<h1>Vue JS from ZendVN | Demo</h1>
+		</div>
+	</header>
+
+	<section class="section section--gray">
+		<div class="container">
+			<h2 class="hdg-lv2">Thực hành xử lý dữ liệu với bài tập mẫu sau:</h2>
+			<div id="app">
+				<p class="c-txt">{{ description }}</p>
+				<p class="cart-num">Giỏ Hàng ({{ cartNmuber }})</p>
+				<div class="box-info">
+					<div class="box-info__img">
+						<img v-bind:src="getProduct.img" alt="fluid-image">
+					</div>
+					<div class="box-info__des">
+						<h1 class="box-info__title"><a v-bind:href="url" v-bind:target="target">{{ title }}</a></h1>
+						<p class="box-info__brand">Brand: No Brand</p>
+						<p class="box-info__qty" v-if="getProduct.qty > 0">Số lượng còn: {{ getProduct.qty }}</p>
+						<p class="box-info__qty danger" v-if="getProduct.qty <= 0">Hết Hàng</p>
+						<p class="box-info__price">{{ formatFinalPrice }}</p>
+						<p class="box-info__discount">{{ formatOrinalPrice }} <span>-{{ sale * 100 }}%</span></p>
+						<div class="box-info__colors">
+							<p class="box-info__label">Màu sắc</p>
+							<div class="box-info__color">
+								<p class="box-info__textColor">{{ getProduct.textColor }}</p>
+								<ul>
+									<li v-for="(item, index) in listProductDetails" v-bind:class="activeClass(index)" v-bind:key="index" v-on:click="handleClickColor($event, index)">
+										<img v-bind:src="item.img" v-bind:alt="item.textColor" class="fluid-image">
+									</li>
+									<!-- <li><img src="assets/img/common/xanh.jpg" alt="fluid-image"></li>
+									<li><img src="assets/img/common/trang.jpg" alt="fluid-image"></li> -->
+								</ul>
+							</div>
+						</div>
+						<p v-bind:class="box-info__cart" v-on:click="handleAddToCart" v-if="getProduct.qty > 0">
+							<button class="btn btn-primary">Add To Cart</button>
+						</p>
+						<p v-bind:class="box-info__cart" v-if="getProduct.qty <= 0">
+							<button class="btn btn-primary disabled">Add To Cart</button>
+						</p>
+					</div>
+				</div>
+				<div class="details" v-html="content">
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<p class="copy">Kenvin Nguyen</p>
+				<a href="https://github.com/nvphuc-dev/vue_zendvn" class="link" target="_blank">https://github.com/nvphuc-dev/vue_zendvn</a>
+			</div>
+		</div>
+	</footer>
+	<script src="assets/js/vue.js"></script>
+	<script src="assets/js/demo.js"></script>
+</body>
+</html>
