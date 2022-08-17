@@ -31,3 +31,13 @@ app
 		ProductItem
 		ProductItem
 	Footer
+	-> props: là những data truyền từ component cha sang component con. Cú pháp sử dụng giống với thuộc tính -> ràng buộc thuộc tính -> sử dụng v-bind: (tự đặt ra)
+	-> props down: truyền dữ liệu từ cha vào con, và con chỉ được sài thôi, không được thay đổi trực tiếp.
+	-> event up: Con truyền thông điệp (truyền sự kiện) thông báo cho component cha biết là nó muốn thay đổi dữ liệu -> Nhiệm vụ của component cha là nhận được thông điệp và tiến hành thay đổi data (Custom Event trong Vuejs)
+
+	click -> sự kiện có sẵng trong Vuejs
+	v-on:click='changeTitle'
+	'click' -> Tên của sự kiện
+	'changeTitle' -> Hàm xử lý khi sự kiện được kích hoạt (khi người dùng click)
+
+	

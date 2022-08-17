@@ -2,4 +2,4 @@ https://www.youtube.com/watch?v=6mlnBNKYpfI&list=PL7_CawtGdTaTAaOC7J8vECH6_IDU_4
 
 Lập trình VueJs - 12 Render Template dùng biểu thức điều kiện
 Lập trình VueJs - 15 Lưu ý quan trọng về Array và Object trong VueJs
-Lập trình VueJs - 26 Tìm hiểu Props Down trong Vue ... xem típ
+Lập trình VueJs - 30 Tìm hiểu Slot và bài tập ứng dụng ... xem típ
